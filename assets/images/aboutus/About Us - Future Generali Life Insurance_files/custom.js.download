@@ -1,0 +1,466 @@
+/*scrolling performance*/
+jQuery.event.special.touchstart = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("touchstart", handle, { passive: true });
+    }
+};
+/*scrolling performance*/
+
+/*slider*/
+$('.slider .owl-carousel').owlCarousel({
+    loop:false,
+    margin:5,
+    responsiveClass:true,
+    nav:false,
+    dots:true,
+    items:1,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false
+})
+/*slider*/
+
+/*inner-slider*/
+$('.inner-slider .owl-carousel').owlCarousel({
+    loop:true,
+    margin:5,
+    responsiveClass:true,
+    nav:false,
+    dots:true,
+    items:1,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false
+})
+/*inner-slider*/
+
+/*Term Plans-slider*/
+$('#term-plans-details .owl-carousel').owlCarousel({
+    loop:false,
+    margin:0,
+    responsiveClass:true,
+    nav:false,
+    dots:true,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            loop:true,
+            autoplay:false,
+        },
+        600:{
+            items:2,
+            autoplay:false,
+        },
+        1000:{
+            items:3,
+            autoplay:false,
+        }
+    }
+})
+/*Term Plans-slider*/
+
+/*testimonials*/
+$('.testimonials .owl-carousel').owlCarousel({
+    loop:false,
+    margin:0,
+    responsiveClass:true,
+    nav:true,
+    dots:false,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            dots:true,
+            loop:true,
+            autoplay:true
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+/*testimonials*/
+
+/*new-testimonials*/
+$('.new-testimonials .owl-carousel').owlCarousel({
+    loop:true,
+    margin:30,
+    responsiveClass:true,
+    nav:false,
+    dots:true,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            loop:true,
+            autoplay:true
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+/*new-testimonials*/
+
+/*employee-testimonials*/
+$('.employee-testimonials .owl-carousel').owlCarousel({
+    loop:false,
+    margin:0,
+    responsiveClass:true,
+    nav:true,
+    dots:true,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            dots:true,
+            loop:true,
+            autoplay:true
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+/*employee-testimonials*/
+
+/*Our-Values*/
+$('.Our-Values .owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    responsiveClass:true,
+    nav:false,
+    dots:true,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            dots:true,
+            loop:true,
+            autoplay:true
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+/*Our-Values*/
+
+/*seeing-is-learning*/
+$('.seeing-is-learning .owl-carousel').owlCarousel({
+    loop:false,
+    margin:0,
+    responsiveClass:true,
+    nav:true,
+    dots:true,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            loop:true,
+            autoplay:true
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+/*seeing-is-learning*/
+
+/*insurance-made-simple*/
+$('.insurance-made-simple .owl-carousel').owlCarousel({
+    loop:false,
+    margin:0,
+    responsiveClass:true,
+    nav:true,
+    dots:true,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            loop:true,
+            autoplay:true
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+/*insurance-made-simple*/
+
+/*menu*/
+var menu = new MmenuLight(
+	document.querySelector( '#menu' ),
+		'all'
+	);
+
+	var navigator = menu.navigation({
+	// selectedClass: 'Selected',
+	// slidingSubmenus: true,
+	// theme: 'dark',
+	// title: 'Menu'
+	});
+
+	var drawer = menu.offcanvas({
+	// position: 'left'
+	});
+
+	//  Open the menu.
+	document.querySelector( 'a[href="#menu"]' )
+	.addEventListener( 'click', evnt => {
+	  evnt.preventDefault();
+	  drawer.open();
+});
+
+$("nav .nav-item").hover(
+	function () {
+	$(this).addClass("hovered");
+	},
+	function () {
+	$(this).removeClass("hovered");
+	}
+);
+
+$(".search_outer .close_search").on("click", function(event)
+	{
+		$(".search_outer").toggleClass('current');
+		event.stopPropagation();
+	});
+
+	$(".search_outer").on("click", function(event)
+	{
+		event.stopPropagation();
+	});
+
+	$(document).on("click", function(event)
+	{
+		$(".search_outer").removeClass("current");
+});
+
+$('#btnSlide').on('click', function(){
+	$('#FloatingMenu').toggleClass('hideFloatingMenu');
+});
+
+$(".second-parent").hover(function(){
+	$(".second-parent").toggleClass('active');
+}); 
+/*menu*/
+
+/*Defer Offscreen Images*/
+function init() {
+    setTimeout(function(){
+      var imgDefer = document.getElementsByTagName('img');
+      for (var i = 0; i < imgDefer.length; i++) {
+        if (imgDefer[i].getAttribute('data-src')) {
+          imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+        }
+      }
+    }, 10);
+
+    setTimeout(function(){
+        var iframeDefer = document.getElementsByTagName('iframe');
+          for (var i = 0; i < iframeDefer.length; i++) {
+            if (iframeDefer[i].getAttribute('data-src')) {
+              iframeDefer[i].setAttribute('src',iframeDefer[i].getAttribute('data-src'));
+            }
+          }
+    }, 7000);
+}
+window.onload = init;
+/*Defer Offscreen Images*/
+
+
+/*footer-tabs*/
+$('.footer-middle h4').click(function () {
+    if ($(this).parent().hasClass("active")) {
+      $(this).parent().removeClass("active");
+    }else{
+      $(this).parent().addClass("active");
+    }
+});
+/*footer-tabs*/
+
+/*Back To Top*/
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+/*Back To Top*/
+
+/*Quick-Links*/
+$(function(){
+    $('.quick-text').click(function(){
+        $(".fixed-nav").toggleClass('active');
+    });
+});
+/*Quick-LInks*/
+
+
+//Go through each carousel on the page
+$('.owl-carousel').each(function() {
+    //Find each set of dots in this carousel
+  $(this).find('.owl-dot').each(function(index) {
+    //Add one to index so it starts from 1
+    $(this).attr('aria-label', index + 1);
+  });
+});
+
+
+/**Show-hide**/
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+/**show-hide**/
+
+/*form-LInks*/
+function showPage() {
+  var sel = document.getElementById('ddlHomeGetMeStarted');
+  var option = sel.options[sel.selectedIndex].value;
+  window.open(option + "/");
+}
+function showHumanPage() {
+  var sel = document.getElementById('human-life');
+  var option = sel.options[sel.selectedIndex].value;
+  window.open(option);
+}
+function showPremiumPage() {
+  var sel = document.getElementById('premium-calculator');
+  var option = sel.options[sel.selectedIndex].value;
+  window.open(option);
+}
+/*form-LInks*/
+
+
+
+
+/*fixed-navigation*/
+    $(document).ready(function () {
+      $(document).on("scroll", onScroll);
+      $('.scrolling-nav a[href^="#"]').on('click', function (e) {
+          e.preventDefault();           
+           $(this).addClass('active');
+          var target = this.hash;            
+          menu = target;
+          $([document.documentElement, document.body]).animate({
+              //scrollTop: $(target).offset().top
+			  //scrollTop: target.offset().top-87
+          }, 300);
+      });
+    });
+    $(window).on('hashchange', function(e){
+        history.replaceState ("", document.title, e.originalEvent.oldURL);
+    });
+    function centerMenu(){
+      var totalWidth = $(".scrolling-nav").outerWidth();
+      $('.scrolling-nav ul').css('width', totalWidth);
+      var myScrollPos = $('.scrolling-nav .active').offset().left + $('.scrolling-nav .active').outerWidth(true) / 2 + 
+      $('.scrolling-nav .menu').scrollLeft() - $('.scrolling-nav .menu').width() / 2;
+      $('.scrolling-nav .menu').scrollLeft(myScrollPos);
+    }
+
+    function onScroll(event){
+      var scrollPos = ($(document).scrollTop() + 122);
+      $('.scrolling-nav a').each(function () {
+          var currLink = $(this);
+          var refElement = $(currLink.attr("href"));
+          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+             $('.scrolling-nav a').removeClass("active");
+              currLink.addClass("active");
+               centerMenu();
+          }
+          else{
+          }
+      });
+    }
+/*fixed-navigation*/
+
+/*Scrolling*/
+$('a[href*="#"]:not([href="#"]):not([href="#show"]):not([href="#hide"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top-122
+            }, 500);
+            return false;
+        }
+    }
+});
+
+$(document).ready(function() {
+	var hash = window.location.hash;
+	console.log('hash is '. hash);
+		if (hash) {
+			var target = $(hash);			
+			if (target.length) {
+				console.log('got it');
+				$('html,body').animate({
+				scrollTop: target.offset().top-122
+			}, 500);
+			return false;
+		}
+	}
+});
+/*Scrolling*/
